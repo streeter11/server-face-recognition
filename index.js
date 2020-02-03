@@ -42,6 +42,6 @@ app.get("/profile/:id", (req, res) => { profileGet.handleProfileGet(req, res, db
 app.put("/image", (req, res) => { imagePost.handleImagePost(req, res, db) });
 app.post("/imageurl", (req, res) => { imagePost.handleApiCall(req, res) });
 
-app.listen(3001, () => {
+app.listen(process.env.PORT || 3001, () => {
   console.log("Face Detection Initialising...")
 });
