@@ -9,15 +9,13 @@ const signIn      = require("./controllers/signIn");
 const profileGet  = require("./controllers/profileGet");
 const imagePost   = require("./controllers/imagePost");
 
-const PASSWORD = process.env.PASSWORD;
+// const PASSWORD = process.env.PASSWORD;
 
 const db = knex({
   client: 'pg',
   connection: {
-    host : '127.0.0.1',
-    user : 'postgres',
-    password : PASSWORD,
-    database : 'face-recognition'
+    connectionString: process.env.DATABASE_URL,
+    ssl: true
   }
 });
 
