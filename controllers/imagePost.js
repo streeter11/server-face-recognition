@@ -10,9 +10,9 @@ const handleApiCall = (req, res) => {
   .then(data => {
     res.json(data);
   })
-  .catch(err => res.status(400).json("Unable to fetch"))
+  .catch(err => console.log(data));
 }
-
+// res.status(400).json("Unable to fetch")
 const handleImagePost = (req, res, db) => {
 const { id } = req.body;
   db("users").where({id})
